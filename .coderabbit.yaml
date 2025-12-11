@@ -1,0 +1,9 @@
+review:
+  auto_review_on:
+    - pull_request
+  summary: true
+  coverage: high
+
+behavior:
+  require_explicit_review: false
+  comment_out_of_scope: false
