@@ -1,0 +1,175 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/2000/1000');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .menu {
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        
+        .menu h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .menu li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .menu li:last-child {
+            border-bottom: none;
+        }
+        
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .images {
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        
+        .images figure {
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .images figcaption {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        .contact {
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        
+        .contact h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact input[type="text"], .contact input[type="email"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .contact textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .contact button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .contact button[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Welcome to Our Restaurant</h1>
+        <p>Experience the best of fine dining</p>
+    </header>
+    <main>
+        <section class="menu">
+            <h2>Our Menu</h2>
+            <ul>
+                <li><a href="#">Appetizers</a></li>
+                <li><a href="#">Salads</a></li>
+                <li><a href="#">Entrees</a></li>
+                <li><a href="#">Desserts</a></li>
+                <li><a href="#">Drinks</a></li>
+            </ul>
+        </section>
+        <section class="images">
+            <h2>Our Gallery</h2>
+            <figure>
+                <img src="https://picsum.photos/200" alt="image 1">
+                <figcaption>Image 1</figcaption>
+            </figure>
+            <figure>
+                <img src="https://picsum.photos/201" alt="image 2">
+                <figcaption>Image 2</figcaption>
+            </figure>
+            <figure>
+                <img src="https://picsum.photos/202" alt="image 3">
+                <figcaption>Image 3</figcaption>
+            </figure>
+        </section>
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <p>Send us a message or give us a call</p>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
+```
