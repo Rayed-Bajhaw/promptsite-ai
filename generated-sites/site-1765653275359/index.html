@@ -1,0 +1,101 @@
+<html>
+<head>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+  header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+  .hero { 
+    height: 80vh; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  img { width: 100%; border-radius: 10px; }
+  .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px 10px 0 0; }
+  footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Bistro Bliss</h1>
+  </header>
+
+  <div class="hero" style="background-image: url('https://picsum.photos/2000/1000?random=1');">
+    <h2>Delicious Food, Unbeatable Experience</h2>
+    <p>Join us for a culinary journey like no other</p>
+  </div>
+
+  <div class="section">
+    <h2>Our Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/400/150?random=1" alt="Card Image">
+        <h3>Appetizers</h3>
+        <ul>
+          <li>Fresh Bruschetta</li>
+          <li>Grilled Shrimp Cocktail</li>
+          <li>Spinach and Artichoke Dip</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/150?random=2" alt="Card Image">
+        <h3>Main Course</h3>
+        <ul>
+          <li>Grilled Steak Frites</li>
+          <li>Pan-Seared Salmon</li>
+          <li>Vegetarian Quinoa Bowl</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/150?random=3" alt="Card Image">
+        <h3>Desserts</h3>
+        <ul>
+          <li>Creme Brûlée</li>
+          <li>Chocolate Lava Cake</li>
+          <li>Fresh Fruit Tart</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/150?random=4" alt="Card Image">
+        <h3>Drinks</h3>
+        <ul>
+          <li>Soft Drinks</li>
+          <li>Beer and Wine</li>
+          <li>Cocktails and Martinis</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/150?random=5" alt="Card Image">
+        <h3>Specials</h3>
+        <ul>
+          <li>Happy Hour Deals</li>
+          <li>Lunch Specials</li>
+          <li>Dinner Packages</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Join Us</h2>
+    <p>Get in touch with us to make a reservation or inquire about our services.</p>
+    <address>
+      <p>123 Main St, Anytown, USA</p>
+      <p>Tel: 555-555-5555</p>
+      <p>Email: <a href="mailto:bistrobliss@email.com">bistrobliss@email.com</a></p>
+    </address>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Bistro Bliss. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
