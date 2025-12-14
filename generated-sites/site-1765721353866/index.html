@@ -1,0 +1,86 @@
+<html>
+<head>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+  header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+  .hero { 
+    height: 80vh; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  img { width: 100%; border-radius: 10px; }
+  .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>La Bella Vita</h1>
+  </header>
+
+  <div class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?italian-restaurants')">
+    <h2>Experience the Taste of Italy</h2>
+    <p>Our restaurant offers a wide variety of traditional Italian dishes in a cozy and welcoming atmosphere.</p>
+  </div>
+
+  <div class="section">
+    <h2>Our Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/250/150" alt="Pasta dish">
+        <h3>Pasta alla Carbonara</h3>
+        <p>Bacon, eggs, and parmesan cheese come together in this rich and creamy pasta dish.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/151" alt="Pasta dish">
+        <h3>Pizza Margherita</h3>
+        <p>A classic Neapolitan-style pizza topped with fresh tomatoes, mozzarella, and basil.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/152" alt="Pasta dish">
+        <h3>Chicken Parmesan</h3>
+        <p>Breaded and fried chicken topped with marinara sauce and melted mozzarella cheese.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/153" alt="Dessert">
+        <h3>Tiramisu</h3>
+        <p>A classic Italian dessert made with ladyfingers, mascarpone cheese, and espresso.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/154" alt="Beverage">
+        <h3>Espresso</h3>
+        <p>A strong and rich Italian coffee made from high-quality beans.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Images of Our Restaurant</h2>
+    <div class="grid">
+      <img src="https://picsum.photos/250/155" alt="Restaurant interior">
+      <img src="https://picsum.photos/250/156" alt="Restaurant exterior">
+      <img src="https://picsum.photos/250/157" alt="Restaurant staff">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Contact Us</h2>
+    <p>Phone: 555-555-5555</p>
+    <p>Email: <a href="mailto:info@labellavita.com">info@labellavita.com</a></p>
+    <p>Address: 123 Main St, Anytown, USA</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 La Bella Vita. All rights reserved.</p>
+  </footer>
+</body>
+</html>
