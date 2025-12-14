@@ -1,0 +1,80 @@
+<html>
+<head>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+  header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+  .hero { 
+    height: 80vh; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  img { width: 100%; border-radius: 10px; }
+  .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Bistro Bliss</h1>
+  </header>
+
+  <div class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?restaurant-food-plates');">
+    <h2>Indulge in the finest dining experience</h2>
+    <p>Discover a world of flavors and cuisines at Bistro Bliss</p>
+  </div>
+
+  <div class="section">
+    <h2>Our Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/250/150" alt="Menu Item 1">
+        <h3>Classic Cheeseburger</h3>
+        <p>A juicy beef patty, melted cheddar cheese, and crispy bacon on a toasted bun</p>
+        <p>$12.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/151" alt="Menu Item 2">
+        <h3>Grilled Chicken Salad</h3>
+        <p>A fresh mix of greens, grilled chicken, and crispy bacon, topped with a zesty vinaigrette</p>
+        <p>$10.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/152" alt="Menu Item 3">
+        <h3>Seafood Paella</h3>
+        <p>A hearty Spanish dish loaded with shrimp, mussels, and chorizo, cooked to perfection</p>
+        <p>$19.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/153" alt="Menu Item 4">
+        <h3>Vegetarian Quinoa Bowl</h3>
+        <p>A flavorful mix of roasted vegetables, quinoa, and feta cheese, served with a side of tahini sauce</p>
+        <p>$14.99</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Our Story</h2>
+    <img src="https://picsum.photos/800/400" alt="Restaurant Interior">
+  </div>
+
+  <div class="section">
+    <h2>Get in Touch</h2>
+    <p>Contact us to book a table or inquire about catering services</p>
+    <p>Phone: 555-555-5555 | Email: [info@bistrobliss.com](mailto:info@bistrobliss.com)</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Bistro Bliss. All rights reserved.</p>
+  </footer>
+</body>
+</html>
