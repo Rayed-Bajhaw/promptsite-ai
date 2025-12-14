@@ -1,0 +1,75 @@
+<html>
+<head>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+  header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+  .hero { 
+    height: 80vh; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  img { width: 100%; border-radius: 10px; }
+  .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Bistro Bliss</h1>
+  </header>
+
+  <div class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?restaurant-interior');">
+    <h2>Delicious Food, Warm Ambiance</h2>
+    <p>Experience the best of culinary art at Bistro Bliss, where every dish is a masterpiece.</p>
+  </div>
+
+  <div class="section">
+    <h2>Our Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/250/250?image=1000" alt="Burger">
+        <h3>Burger of the Day</h3>
+        <p>Our signature burger made with fresh beef, lettuce, tomato, and cheese.</p>
+        <p>$15.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/250?image=950" alt="Salad">
+        <h3>Grilled Chicken Salad</h3>
+        <p>A fresh mix of greens, grilled chicken, and vegetables, topped with our special sauce.</p>
+        <p>$12.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/250?image=960" alt="Pizza">
+        <h3>Artisanal Pizza</h3>
+        <p>A classic pizza made with fresh dough, tomato sauce, and melted mozzarella cheese.</p>
+        <p>$14.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/250?image=1001" alt="Dessert">
+        <h3>Decadent Chocolate Cake</h3>
+        <p>A rich and moist cake made with dark chocolate and topped with whipped cream.</p>
+        <p>$7.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/250/250?image=1026" alt="Drink">
+        <h3>Signature Drink</h3>
+        <p>A refreshing blend of fruit juice and sparkling water, served with a twist of lemon.</p>
+        <p>$5.99</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Bistro Bliss. All rights reserved.</p>
+  </footer>
+</body>
+</html>
