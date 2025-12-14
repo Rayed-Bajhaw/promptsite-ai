@@ -122,6 +122,10 @@ Do NOT output Markdown. Do NOT output code fences.
       cleaned
     );
     const prResponse = await createPullRequest(branchName, prompt, id);
+    if (!prResponse.ok) {
+      const errorText = await prResponse.text();
+      throw new Error(`Failed to create PR: ${prResponse.status} ${errorText}`);
+    }
     const prData = await prResponse.json();
 
     if (process.env.VERCEL_DEPLOY_HOOK) {
