@@ -79,17 +79,17 @@ export async function getServerSideProps({ params }: any) {
   const bodyHtml = bodyTag?.innerHTML || html;
 
   let cleanBody = bodyHtml;
-  try {
-    cleanBody = DOMPurify.sanitize(bodyHtml, {
-      USE_PROFILES: { html: true },
-      FORBID_TAGS: ["script"],
-      FORBID_ATTR: ["onclick", "onerror", "onload"],
-      ALLOWED_ATTR: ["href", "src", "alt", "class", "id", "style"],
-      ALLOWED_URI_REGEXP: /^https?:\/\//i,
-    });
-  } catch (err) {
-    console.error("Sanitization error:", err);
-  }
+  // try {
+  //   cleanBody = DOMPurify.sanitize(bodyHtml, {
+  //     USE_PROFILES: { html: true },
+  //     FORBID_TAGS: ["script"],
+  //     FORBID_ATTR: ["onclick", "onerror", "onload"],
+  //     ALLOWED_ATTR: ["href", "src", "alt", "class", "id", "style"],
+  //     ALLOWED_URI_REGEXP: /^https?:\/\//i,
+  //   });
+  // } catch (err) {
+  //   console.error("Sanitization error:", err);
+  // }
 
   return {
     props: {
