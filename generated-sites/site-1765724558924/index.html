@@ -1,0 +1,99 @@
+<html>
+<head>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+  header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+  .hero { 
+    height: 80vh; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+  img { width: 100%; border-radius: 10px; }
+  .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>La Belle Époque</h1>
+  </header>
+
+  <div class="hero" style="background-image: url('https://picsum.photos/2500/500?image=1000');">
+    <h2>Experience the Flavors of France</h2>
+    <p>Indulge in our exquisite cuisine, crafted with love and care to transport you to the heart of France.</p>
+  </div>
+
+  <div class="section">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="card">
+        <h3>Escargots</h3>
+        <p>Snails in garlic butter</p>
+        <p>$12.99</p>
+        <img src="https://picsum.photos/400/200?image=1075" alt="Escargots">
+      </div>
+      <div class="card">
+        <h3>Coq au Vin</h3>
+        <p>Chicken in red wine sauce</p>
+        <p>$19.99</p>
+        <img src="https://picsum.photos/400/200?image=1080" alt="Coq au Vin">
+      </div>
+      <div class="card">
+        <h3>Tournedos Rossini</h3>
+        <p>Filet mignon with foie gras</p>
+        <p>$34.99</p>
+        <img src="https://picsum.photos/400/200?image=1090" alt="Tournedos Rossini">
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>About Us</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Our Story</h3>
+        <p>La Belle Époque is a French restaurant that brings the essence of France to your table.</p>
+        <img src="https://picsum.photos/400/200?image=1100" alt="Our Story">
+      </div>
+      <div class="card">
+        <h3>Meet Our Chef</h3>
+        <p>Our chef, Pierre, has over 20 years of experience in the culinary industry.</p>
+        <img src="https://picsum.photos/400/200?image=1110" alt="Meet Our Chef">
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+      <div class="card">
+        <h3>Address</h3>
+        <p>123 Main St, Anytown, USA</p>
+      </div>
+      <div class="card">
+        <h3>Phone</h3>
+        <p>(123) 456-7890</p>
+      </div>
+      <div class="card">
+        <h3>Email</h3>
+        <p>info@labellepoque.com</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 La Belle Époque. All rights reserved.</p>
+  </footer>
+</body>
+</html>

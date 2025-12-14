@@ -110,8 +110,13 @@ Do NOT output Markdown. Do NOT output code fences.
     const id = Date.now().toString();
     const folder = path.join(process.cwd(), "generated-sites", `site-${id}`);
 
-    fs.mkdirSync(folder, { recursive: true });
-    fs.writeFileSync(path.join(folder, "index.html"), cleaned);
+    // If running on Vercel, skip writing local files (read-only FS)
+    if (!process.env.VERCEL) {
+      fs.mkdirSync(folder, { recursive: true });
+      fs.writeFileSync(path.join(folder, "index.html"), cleaned);
+    } else {
+      console.log("Running on Vercel — skipping local file write.");
+    }
 
     const branchName = `site-${id}`;
 

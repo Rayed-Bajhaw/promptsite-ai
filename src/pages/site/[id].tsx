@@ -3,54 +3,93 @@ import path from "path";
 import { parse } from "node-html-parser";
 import DOMPurify from "isomorphic-dompurify";
 
+const owner = process.env.GITHUB_REPO_OWNER!;
+const repo = process.env.GITHUB_REPO_NAME!;
+
 export default function Site({ cleanBody, styleContent }: any) {
   return (
     <>
-      {/* Inject CSS using Next.js compatible global style */}
       <style jsx global>
         {styleContent}
       </style>
-
-      {/* Render sanitized body */}
       <div dangerouslySetInnerHTML={{ __html: cleanBody }} />
     </>
   );
 }
 
-export async function getServerSideProps(context: any) {
-  const { id } = context.params;
+export async function getServerSideProps({ params }: any) {
+  const { id } = params;
 
-  const filePath = path.join(
-    process.cwd(),
-    "generated-sites",
-    `site-${id}`,
-    "index.html"
-  );
+  let html = "";
 
-  let html = "<h1>Site not found</h1>";
+  if (!process.env.VERCEL) {
+    console.log("Running locally → reading from local folder");
 
-  if (fs.existsSync(filePath)) {
-    html = fs.readFileSync(filePath, "utf8");
+    const localPath = path.join(
+      process.cwd(),
+      "generated-sites",
+      `site-${id}`,
+      "index.html"
+    );
+
+    if (!fs.existsSync(localPath)) {
+      return {
+        props: {
+          cleanBody: "<h1>Site not found locally</h1>",
+          styleContent: "",
+        },
+      };
+    }
+
+    html = fs.readFileSync(localPath, "utf8");
+  } else {
+    console.log("Running on Vercel → fetching from GitHub RAW");
+
+    const url = `https://raw.githubusercontent.com/${owner}/${repo}/main/generated-sites/site-${id}/index.html`;
+    const githubResponse = await fetch(url);
+
+    if (!githubResponse.ok) {
+      return {
+        props: {
+          cleanBody: "<h1>Site not found on GitHub</h1>",
+          styleContent: "",
+        },
+      };
+    }
+
+    html = await githubResponse.text();
   }
 
-  const root = parse(html);
+  let root;
+  try {
+    root = parse(html);
+  } catch (err) {
+    return {
+      props: {
+        cleanBody: html,
+        styleContent: "",
+      },
+    };
+  }
 
-  // Extract <style> content
   const styleTag = root.querySelector("style");
-  const styleContent = styleTag ? styleTag.innerHTML : "";
-
-  // Extract <body> content
   const bodyTag = root.querySelector("body");
-  const bodyHtml = bodyTag ? bodyTag.innerHTML : html;
 
-  // Sanitize ONLY body
-  const cleanBody = DOMPurify.sanitize(bodyHtml, {
-    USE_PROFILES: { html: true },
-    FORBID_TAGS: ["script"],
-    FORBID_ATTR: ["onclick", "onerror", "onload"],
-    ALLOWED_ATTR: ["href", "src", "alt", "class", "id", "style"],
-    ALLOWED_URI_REGEXP: /^https?:\/\//i, // allow safe image URLs in style attributes
-  });
+  const styleContent = styleTag?.innerHTML || "";
+  const bodyHtml = bodyTag?.innerHTML || html;
+
+  let cleanBody = bodyHtml;
+  try {
+    cleanBody = DOMPurify.sanitize(bodyHtml, {
+      USE_PROFILES: { html: true },
+      FORBID_TAGS: ["script"],
+      FORBID_ATTR: ["onclick", "onerror", "onload"],
+      ALLOWED_ATTR: ["href", "src", "alt", "class", "id", "style"],
+      ALLOWED_URI_REGEXP: /^https?:\/\//i,
+    });
+  } catch (err) {
+    console.error("Sanitization error:", err);
+  }
 
   return {
     props: {
