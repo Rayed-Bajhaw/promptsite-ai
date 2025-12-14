@@ -1,0 +1,88 @@
+<html>
+<head>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+  header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+  .hero { 
+    height: 80vh; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  img { width: 100%; border-radius: 10px; }
+  .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>La Belle Époque</h1>
+  </header>
+
+  <div class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?restaurant-table-setting-dinner');">
+    <h2>Experience Fine Dining</h2>
+    <p>Indulge in our exquisite menu, crafted with love and care to delight your senses.</p>
+  </div>
+
+  <div class="section">
+    <h2>Our Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/200/150" alt="Menu Item 1">
+        <h3>Steak au Poivre</h3>
+        <p>Our signature peppercorn-crusted steak, served with a side of garlic mashed potatoes.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/151" alt="Menu Item 2">
+        <h3>Seared Salmon</h3>
+        <p>Fresh salmon fillet, seared to perfection and served with a citrus-herb sauce.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/152" alt="Menu Item 3">
+        <h3>Rack of Lamb</h3>
+        <p>Tender and juicy lamb chops, roasted to perfection with a hint of rosemary.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/153" alt="Menu Item 4">
+        <h3>Vegetarian Quinoa Bowl</h3>
+        <p>A hearty bowl of quinoa, roasted vegetables, and a dollop of tzatziki sauce.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/154" alt="Menu Item 5">
+        <h3>Children's Menu</h3>
+        <p>A special menu for our younger guests, featuring mac and cheese, chicken tenders, and more!</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/155" alt="Menu Item 6">
+        <h3>Dessert Menu</h3>
+        <p>Treat yourself to one of our decadent desserts, including chocolate cake, cheesecake, and ice cream.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Reservations</h2>
+    <p>Book your table now and experience the magic of La Belle Époque!</p>
+    <button>Book Now</button>
+  </div>
+
+  <div class="section">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@labellepoque.com">info@labellepoque.com</a></p>
+    <p>Phone: 555-555-5555</p>
+    <p>Address: 123 Main St, Anytown, USA</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 La Belle Époque. All rights reserved.</p>
+  </footer>
+</body>
+</html>
