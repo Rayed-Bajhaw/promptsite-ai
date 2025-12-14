@@ -20,7 +20,7 @@ export default function Home() {
     setLoading(false);
 
     if (data.success) {
-      setSiteUrl(data.url);
+      setSiteUrl(data.siteUrl);
     } else {
       alert("Error generating site");
     }

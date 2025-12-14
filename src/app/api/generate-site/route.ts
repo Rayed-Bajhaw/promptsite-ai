@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import Groq from "groq-sdk";
 import fs from "fs";
 import path from "path";
+import { createBranch, uploadFile, createPullRequest } from "@/lib/github";
 
 export async function POST(req: Request) {
   try {
@@ -103,17 +104,40 @@ Do NOT output Markdown. Do NOT output code fences.
     const html =
       response.choices[0].message?.content || "<h1>Error generating site</h1>";
 
+    const cleaned = html.replace(/```/g, "").trim();
+
     // Create unique site folder
     const id = Date.now().toString();
     const folder = path.join(process.cwd(), "generated-sites", `site-${id}`);
 
     fs.mkdirSync(folder, { recursive: true });
-    fs.writeFileSync(path.join(folder, "index.html"), html);
+    fs.writeFileSync(path.join(folder, "index.html"), cleaned);
+
+    const branchName = `site-${id}`;
+
+    await createBranch(branchName);
+    await uploadFile(
+      branchName,
+      `generated-sites/site-${id}/index.html`,
+      cleaned
+    );
+    const prResponse = await createPullRequest(branchName, prompt, id);
+    if (!prResponse.ok) {
+      const errorText = await prResponse.text();
+      throw new Error(`Failed to create PR: ${prResponse.status} ${errorText}`);
+    }
+    const prData = await prResponse.json();
+
+    if (process.env.VERCEL_DEPLOY_HOOK) {
+      await fetch(process.env.VERCEL_DEPLOY_HOOK, { method: "POST" });
+    }
 
     return NextResponse.json({
       success: true,
       id,
-      url: `/site/${id}`,
+      siteUrl: `/site/${id}`,
+      githubBranch: branchName,
+      pullRequest: prData?.html_url || null,
     });
   } catch (error) {
     console.error("Error generating site:", error);
