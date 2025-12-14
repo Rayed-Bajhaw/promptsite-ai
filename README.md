@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 AI Website Generator — Fully Automated CI/CD + PR Review + Deployment
 
-## Getting Started
+This project automatically generates complete websites from a user prompt using AI (Groq), then:
 
-First, run the development server:
+✅ Creates a new GitHub branch  
+✅ Uploads generated HTML  
+✅ Opens a Pull Request  
+✅ Triggers CodeRabbit automated review  
+✅ Deploys to Vercel automatically after merging  
+✅ Hosts the final website at `/site/<id>`  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+No manual coding required — everything is automated.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⭐ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🔹 AI-Powered Website Generation
+- Uses Groq `llama-3.1-8b-instant` to generate clean, production-ready HTML.
+- Supports custom prompts and multiple design layouts.
+- Outputs fully responsive UI using inline CSS.
 
-## Learn More
+### 🔹 GitHub Automation
+- Auto-creates branches (`site-<timestamp>`).
+- Uploads files via GitHub Contents API.
+- Auto-opens Pull Requests with metadata.
+- CodeRabbit reviews PRs instantly.
 
-To learn more about Next.js, take a look at the following resources:
+### 🔹 Vercel Deployment Pipeline
+- Vercel deploy hook automatically builds each merged PR.
+- `/site/<id>` loads generated website directly from GitHub RAW file.
+- Completely serverless — works even without file system writes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔹 Secure Rendering
+- HTML sanitized at build time.
+- SSR compatible.
+- No unsafe script execution.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🏗 Architecture
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
