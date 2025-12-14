@@ -1,0 +1,79 @@
+<html>
+<head>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+  header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
+  .hero { 
+    height: 80vh; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  img { width: 100%; border-radius: 10px; }
+  .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>La Bella Vita</h1>
+  </header>
+
+  <div class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?restaurant-food');">
+    <h2>Authentic Italian Cuisine</h2>
+    <p>Delicious food, cozy atmosphere, and warm hospitality</p>
+  </div>
+
+  <div class="section">
+    <h2>Our Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/300/200" alt="Pasta dish">
+        <h3>Pasta Bolognese</h3>
+        <p>Homemade spaghetti with rich meat ragù and parmesan cheese</p>
+        <p>Price: $15.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/201" alt="Pizza image">
+        <h3>Neapolitan Pizza</h3>
+        <p>Fresh mozzarella, tomato sauce, and basil on a crispy crust</p>
+        <p>Price: $14.99</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300/202" alt="Salad image">
+        <h3>Caprese Salad</h3>
+        <p>Fresh mozzarella, tomato, and basil, dressed with olive oil and balsamic glaze</p>
+        <p>Price: $10.99</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Images from our kitchen</h2>
+    <div class="grid">
+      <img src="https://source.unsplash.com/600/400/?kitchen-cooking" alt="Kitchen image">
+      <img src="https://source.unsplash.com/600/400/?italian-food" alt="Food image">
+      <img src="https://source.unsplash.com/600/400/?restaurant-interior" alt="Interior image">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Reservations and Contact</h2>
+    <p>Phone: +1 (123) 456-7890</p>
+    <p>Email: <a href="mailto:info@labellavita.com">info@labellavita.com</a></p>
+    <p>Address: 123 Main St, Anytown, USA</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 La Bella Vita. All rights reserved.</p>
+  </footer>
+</body>
+</html>
